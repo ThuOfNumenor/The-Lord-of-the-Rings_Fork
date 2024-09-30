@@ -1221,7 +1221,7 @@ public class LOTREventHandler implements IFuelHandler {
 		EntityLivingBase entity = event.entityLiving;
 		Random rand = entity.getRNG();
 		int i = event.lootingLevel;
-		if (entity instanceof EntitySheep && LOTRConfig.dropMutton) {
+		if (entity instanceof EntitySheep && LOTRConfig.dropMutton && !entity.isChild()) {
 			int meat = rand.nextInt(3) + rand.nextInt(1 + i);
 			for (int l = 0; l < meat; ++l) {
 				if (entity.isBurning()) {
